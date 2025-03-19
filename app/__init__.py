@@ -7,4 +7,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+# Create tables if they don't exist ]
+with app.app_context():
+    db.create_all()
+
 from app import routes, models
